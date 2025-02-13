@@ -1,5 +1,6 @@
 package com.binaris.forever_fools;
 
+import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,5 +12,9 @@ public class FFCommonMod {
 
     public static void init() {
 
+    }
+
+    public static ResourceLocation id(String name){
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
 }

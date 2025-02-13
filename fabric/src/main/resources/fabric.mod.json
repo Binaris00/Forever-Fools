@@ -17,6 +17,9 @@
     "entrypoints": {
         "main": [
             "com.binaris.forever_fools.FFFabricMod"
+        ],
+        "client": [
+            "com.binaris.forever_fools.FFFabricClientMod"
         ]
     },
     "mixins": [
