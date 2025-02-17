@@ -1,13 +1,9 @@
 package com.binaris.forever_fools.content.block;
 
-import com.binaris.forever_fools.registry.ItemRegistry;
-import com.mojang.datafixers.kinds.Applicative;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.binaris.forever_fools.registry.FFItemRegistry;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class PotatoPeelsBlock
         extends Block {
@@ -28,7 +24,7 @@ public class PotatoPeelsBlock
     }
 
     public Item getItem() {
-        return (Item) ItemRegistry.POTATOPEELS_ITEMS.get(this.getColor());
+        return (Item) FFItemRegistry.POTATOPEELS_ITEMS.get(this.getColor());
     }
 }
 

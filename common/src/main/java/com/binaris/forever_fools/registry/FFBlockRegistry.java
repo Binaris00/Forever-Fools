@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.Map;
 
-public class BlockRegistry {
+public class FFBlockRegistry {
     public static final Map<DyeColor, Block> POTATO_PEEL_BLOCKS = Map.of();
 
     public static final Block PEELGRASS_BLOCK = new Block(BlockBehaviour.Properties.of());

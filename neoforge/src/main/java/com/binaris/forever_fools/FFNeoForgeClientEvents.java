@@ -1,6 +1,6 @@
 package com.binaris.forever_fools;
 
-import com.binaris.forever_fools.client.ForeverFoolsClient;
+import com.binaris.forever_fools.client.FFCommonClientMod;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -11,12 +11,12 @@ public class FFNeoForgeClientEvents {
     public static class ModBusEvents {
         @SubscribeEvent
         public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-            ForeverFoolsClient.createRenderers(event::registerEntityRenderer);
+            FFCommonClientMod.createRenderers(event::registerEntityRenderer);
         }
 
         @SubscribeEvent
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            //RapscallionsAndRockhoppersClient.createEntityLayers(event::registerLayerDefinition);
+            FFCommonClientMod.createEntityLayers(event::registerLayerDefinition);
         }
     }
 }

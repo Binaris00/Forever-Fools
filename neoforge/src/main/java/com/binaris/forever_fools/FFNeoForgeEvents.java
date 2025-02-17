@@ -1,7 +1,8 @@
 package com.binaris.forever_fools;
 
-import com.binaris.forever_fools.registry.EntityRegistry;
-import com.binaris.forever_fools.registry.ItemRegistry;
+import com.binaris.forever_fools.registry.FFEntityRegistry;
+import com.binaris.forever_fools.registry.FFItemRegistry;
+import com.binaris.forever_fools.registry.FFSoundEvents;
 import com.binaris.forever_fools.util.RegisterFunction;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -17,8 +18,9 @@ public class FFNeoForgeEvents {
 
         @SubscribeEvent
         public static void registerContent(RegisterEvent event) {
-            if (event.getRegistryKey() == Registries.ITEM) register(event, ItemRegistry::registerItems);
-            else if(event.getRegistryKey() == Registries.ENTITY_TYPE) register(event, EntityRegistry::registerEntityTypes);
+            if (event.getRegistryKey() == Registries.ITEM) register(event, FFItemRegistry::registerItems);
+            else if(event.getRegistryKey() == Registries.ENTITY_TYPE) register(event, FFEntityRegistry::registerEntityTypes);
+            else if(event.getRegistryKey() == Registries.SOUND_EVENT) register(event, FFSoundEvents::registerSoundEvents);
 //            if (event.getRegistryKey() == Registries.ENTITY_TYPE)
 //                register(event, RockhoppersEntityTypes::registerEntityTypes);
 //            else if (event.getRegistryKey() == Registries.SOUND_EVENT)
@@ -39,7 +41,7 @@ public class FFNeoForgeEvents {
 
         @SubscribeEvent
         public static void createEntityAttributes(EntityAttributeCreationEvent event) {
-            EntityRegistry.registerAttributes(event::put);
+            FFEntityRegistry.registerAttributes(event::put);
         }
 
         private static <T> void register(RegisterEvent event, Consumer<RegisterFunction<T>> consumer) {

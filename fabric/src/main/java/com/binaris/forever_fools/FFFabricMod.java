@@ -1,7 +1,9 @@
 package com.binaris.forever_fools;
 
-import com.binaris.forever_fools.registry.EntityRegistry;
-import com.binaris.forever_fools.registry.ItemRegistry;
+import com.binaris.forever_fools.registry.FFEntityRegistry;
+import com.binaris.forever_fools.registry.FFFabricCreativeTabs;
+import com.binaris.forever_fools.registry.FFItemRegistry;
+import com.binaris.forever_fools.registry.FFSoundEvents;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Registry;
@@ -12,8 +14,10 @@ public class FFFabricMod implements ModInitializer {
     public void onInitialize() {
         FFCommonMod.init();
 
-        ItemRegistry.registerItems(Registry::register);
-        EntityRegistry.registerEntityTypes(Registry::register);
-        EntityRegistry.registerAttributes(FabricDefaultAttributeRegistry::register);
+        FFItemRegistry.registerItems(Registry::register);
+        FFEntityRegistry.registerEntityTypes(Registry::register);
+        FFEntityRegistry.registerAttributes(FabricDefaultAttributeRegistry::register);
+        FFSoundEvents.registerSoundEvents(Registry::register);
+        FFFabricCreativeTabs.registerTabs();
     }
 }

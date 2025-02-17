@@ -1,0 +1,134 @@
+{
+  "entity.toxifin.ambient": {
+    "sounds": [
+      {
+        "name": "forever_fools:entity/toxifin/ambient1",
+        "volume": 0.1
+      },
+      {
+        "name": "forever_fools:entity/toxifin/ambient2",
+        "volume": 0.1
+      },
+      {
+        "name": "forever_fools:entity/toxifin/ambient3",
+        "volume": 0.1
+      },
+      {
+        "name": "forever_fools:entity/toxifin/ambient4",
+        "volume": 0.1
+      }
+    ],
+    "subtitle": "subtitles.entity.toxifin.ambient"
+  },
+  "entity.toxifin.ambient_land": {
+    "sounds": [
+      "forever_fools:entity/toxifin/land_idle1",
+      "forever_fools:entity/toxifin/land_idle2",
+      "forever_fools:entity/toxifin/land_idle3",
+      "forever_fools:entity/toxifin/land_idle4"
+    ],
+    "subtitle": "subtitles.entity.toxifin.ambient_land"
+  },
+  "entity.toxifin.attack": {
+    "sounds": [
+      "forever_fools:entity/toxifin/attack_loop"
+    ],
+    "subtitle": "subtitles.entity.toxifin.attack"
+  },
+  "entity.toxifin.death": {
+    "sounds": [
+      "forever_fools:entity/toxifin/death"
+    ],
+    "subtitle": "subtitles.entity.toxifin.death"
+  },
+  "entity.toxifin.death_land": {
+    "sounds": [
+      "forever_fools:entity/toxifin/land_death"
+    ],
+    "subtitle": "subtitles.entity.toxifin.death"
+  },
+  "entity.toxifin.flop": {
+    "sounds": [
+      "forever_fools:entity/toxifin/flop1",
+      "forever_fools:entity/toxifin/flop2",
+      "forever_fools:entity/toxifin/flop3",
+      "forever_fools:entity/toxifin/flop4"
+    ],
+    "subtitle": "subtitles.entity.toxifin.flop"
+  },
+  "entity.toxifin.hurt": {
+    "sounds": [
+      "forever_fools:entity/toxifin/hit1",
+      "forever_fools:entity/toxifin/hit2",
+      "forever_fools:entity/toxifin/hit3",
+      "forever_fools:entity/toxifin/hit4"
+    ],
+    "subtitle": "subtitles.entity.toxifin.hurt"
+  },
+  "entity.toxifin.hurt_land": {
+    "sounds": [
+      "forever_fools:entity/toxifin/land_hit1",
+      "forever_fools:entity/toxifin/land_hit2",
+      "forever_fools:entity/toxifin/land_hit3",
+      "forever_fools:entity/toxifin/land_hit4"
+    ],
+    "subtitle": "subtitles.entity.toxifin.hurt"
+  },
+  "entity.plaguewhale.ambient": {
+    "sounds": [
+      "forever_fools:entity/plaguewhale/elder_idle1",
+      "forever_fools:entity/plaguewhale/elder_idle2",
+      "forever_fools:entity/plaguewhale/elder_idle3",
+      "forever_fools:entity/plaguewhale/elder_idle4"
+    ],
+    "subtitle": "subtitles.entity.plaguewhale.ambient"
+  },
+  "entity.plaguewhale.ambient_land": {
+    "sounds": [
+      "forever_fools:entity/toxifin/land_idle1",
+      "forever_fools:entity/toxifin/land_idle2",
+      "forever_fools:entity/toxifin/land_idle3",
+      "forever_fools:entity/toxifin/land_idle4"
+    ],
+    "subtitle": "subtitles.entity.plaguewhale.ambient_land"
+  },
+  "entity.plaguewhale.death": {
+    "sounds": [
+      "forever_fools:entity/plaguewhale/elder_death"
+    ],
+    "subtitle": "subtitles.entity.plaguewhale.death"
+  },
+  "entity.plaguewhale.death_land": {
+    "sounds": [
+      "forever_fools:entity/toxifin/land_death"
+    ],
+    "subtitle": "subtitles.entity.plaguewhale.death"
+  },
+  "entity.plaguewhale.flop": {
+    "sounds": [
+      "forever_fools:entity/toxifin/flop1",
+      "forever_fools:entity/toxifin/flop2",
+      "forever_fools:entity/toxifin/flop3",
+      "forever_fools:entity/toxifin/flop4"
+    ],
+    "subtitle": "subtitles.entity.plaguewhale.flop"
+  },
+  "entity.plaguewhale.hurt": {
+    "sounds": [
+      "forever_fools:entity/plaguewhale/elder_hit1",
+      "forever_fools:entity/plaguewhale/elder_hit2",
+      "forever_fools:entity/plaguewhale/elder_hit3",
+      "forever_fools:entity/plaguewhale/elder_hit4"
+    ],
+    "subtitle": "subtitles.entity.plaguewhale.hurt"
+  },
+  "entity.plaguewhale.hurt_land": {
+    "sounds": [
+      "forever_fools:entity/toxifin/land_hit1",
+      "forever_fools:entity/toxifin/land_hit2",
+      "forever_fools:entity/toxifin/land_hit3",
+      "forever_fools:entity/toxifin/land_hit4"
+    ],
+    "subtitle": "subtitles.entity.plaguewhale.hurt"
+  }
+}
