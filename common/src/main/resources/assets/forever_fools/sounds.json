@@ -130,5 +130,83 @@
       "forever_fools:entity/toxifin/land_hit4"
     ],
     "subtitle": "subtitles.entity.plaguewhale.hurt"
+  },
+  "entity.megaspud.death": {
+    "sounds": [
+      "forever_fools:entity/megaspud/death"
+    ],
+    "subtitle": "subtitles.entity.megaspud.death"
+  },
+  "entity.megaspud.hurt": {
+    "sounds": [
+      "forever_fools:entity/megaspud/hurt1",
+      "forever_fools:entity/megaspud/hurt2",
+      "forever_fools:entity/megaspud/hurt3",
+      "forever_fools:entity/megaspud/hurt4"
+    ],
+    "subtitle": "subtitles.entity.megaspud.hurt"
+  },
+  "entity.megaspud.idle": {
+    "sounds": [
+      "forever_fools:entity/megaspud/idle1",
+      "forever_fools:entity/megaspud/idle2",
+      "forever_fools:entity/megaspud/idle3",
+      "forever_fools:entity/megaspud/idle4"
+    ],
+    "subtitle": "subtitles.entity.megaspud.idle"
+  },
+  "entity.megaspud.summon": {
+    "sounds": [
+      "forever_fools:entity/megaspud/summon"
+    ],
+    "subtitle": "subtitles.entity.megaspud.summon"
+  },
+  "entity.megaspud.fireball": {
+    "sounds": [
+      "forever_fools:entity/megaspud/fireball"
+    ],
+    "subtitle": "subtitles.entity.megaspud.fireball"
+  },
+  "entity.megaspud.jump": {
+    "sounds": [
+      "forever_fools:entity/megaspud/big1",
+      "forever_fools:entity/megaspud/big2",
+      "forever_fools:entity/megaspud/big3",
+      "forever_fools:entity/megaspud/big4"
+    ],
+    "subtitle": "subtitles.entity.megaspud.squish"
+  },
+  "entity.megaspud.jump_hi": {
+    "sounds": [
+      {
+        "name": "forever_fools:entity/megaspud/big1",
+        "pitch": 2.0
+      },
+      {
+        "name": "forever_fools:entity/megaspud/big2",
+        "pitch": 2.0
+      },
+      {
+        "name": "forever_fools:entity/megaspud/big3",
+        "pitch": 2.0
+      },
+      {
+        "name": "forever_fools:entity/megaspud/big4",
+        "pitch": 2.0
+      }
+    ],
+    "subtitle": "subtitles.entity.megaspud.squish"
+  },
+  "entity.megaspud.upset": {
+    "sounds": [
+      "forever_fools:entity/megaspud/mega_spud"
+    ],
+    "subtitle": "subtitles.entity.megaspud.upset"
+  },
+  "entity.megaspud.challenge": {
+    "sounds": [
+      "forever_fools:entity/megaspud/boss_spawn"
+    ],
+    "subtitle": "subtitles.entity.megaspud.challenge"
   }
 }

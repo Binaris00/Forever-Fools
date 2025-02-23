@@ -1,10 +1,7 @@
 package com.binaris.forever_fools.registry;
 
 import com.binaris.forever_fools.FFCommonMod;
-import com.binaris.forever_fools.content.entity.Batato;
-import com.binaris.forever_fools.content.entity.PlaguewhaleSlab;
-import com.binaris.forever_fools.content.entity.PotatoZombie;
-import com.binaris.forever_fools.content.entity.ToxifinSlab;
+import com.binaris.forever_fools.content.entity.*;
 import com.binaris.forever_fools.util.RegisterFunction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -79,11 +76,11 @@ public class FFEntityRegistry {
             .sized(0.6F, 1.95F).eyeHeight(1.62F).clientTrackingRange(10)
             .build(FFCommonMod.id("villager_potato").toString());
 
-    public static final EntityType<Batato> BATATO = EntityType.Builder.<Batato>of(Batato::new, MobCategory.AMBIENT)
+    public static final EntityType<Batato> BATATO = EntityType.Builder.of(Batato::new, MobCategory.AMBIENT)
             .sized(0.5F, 0.9F).eyeHeight(0.45f).clientTrackingRange(5)
             .build(FFCommonMod.id("batato").toString());
 
-    public static final EntityType<PotatoZombie> POTATO_ZOMBIE = EntityType.Builder.<PotatoZombie>of(PotatoZombie::new, MobCategory.MONSTER)
+    public static final EntityType<PotatoZombie> POTATO_ZOMBIE = EntityType.Builder.of(PotatoZombie::new, MobCategory.MONSTER)
             .sized(0.6F, 1.95F).eyeHeight(1.74F).passengerAttachments(2.0125F)
             .clientTrackingRange(8).ridingOffset(-0.7F)
             .build(FFCommonMod.id("poisonous_potato_zombie").toString());
@@ -97,6 +94,12 @@ public class FFEntityRegistry {
             .sized(1.9975F, 0.99875F).eyeHeight(0.499375F).passengerAttachments(1.1753125F)
             .clientTrackingRange(10)
             .build(FFCommonMod.id("plaguewhale").toString());
+
+    public static final EntityType<MegaSpud> MEGASPUD = EntityType.Builder.<MegaSpud>of(MegaSpud::new, MobCategory.MONSTER)
+            .sized(0.52F, 0.52F).eyeHeight(0.325F)
+            .clientTrackingRange(10)
+            .build(FFCommonMod.id("megaspud").toString());
+
 
     public static void registerEntityTypes(RegisterFunction<EntityType<?>> function) {
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("chicken_potato"), POTATO_CHICKEN);
@@ -116,6 +119,7 @@ public class FFEntityRegistry {
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("poisonous_potato_zombie"), POTATO_ZOMBIE);
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("toxifin"), TOXIFIN);
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("plaguewhale"), PLAGUEWHALE);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("megaspud"), MEGASPUD);
     }
 
     public static void registerAttributes(BiConsumer<EntityType<? extends LivingEntity>, AttributeSupplier> consumer) {
@@ -136,5 +140,6 @@ public class FFEntityRegistry {
         consumer.accept(POTATO_ZOMBIE, PotatoZombie.createAttributes().build());
         consumer.accept(TOXIFIN, ToxifinSlab.createAttributes().build());
         consumer.accept(PLAGUEWHALE, PlaguewhaleSlab.createAttributes().build());
+        consumer.accept(MEGASPUD, MegaSpud.createAttributes().build());
     }
 }

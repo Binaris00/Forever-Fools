@@ -544,7 +544,7 @@ public class ToxifinSlab extends Monster {
                     if (this.attackTime == 0) {
                         this.slab.setActiveAttackTarget(livingEntity.getId());
                         if (!this.slab.isSilent()) {
-                            this.slab.level().broadcastEntityEvent(this.slab, (byte)21);
+                            this.slab.level().broadcastEntityEvent(this.slab, (byte)19);
                         }
                     } else if (this.attackTime >= this.slab.getAttackDuration()) {
                         float f = 1.0F;

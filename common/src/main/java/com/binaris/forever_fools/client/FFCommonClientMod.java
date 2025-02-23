@@ -2,12 +2,9 @@ package com.binaris.forever_fools.client;
 
 import com.binaris.forever_fools.FFCommonMod;
 import com.binaris.forever_fools.client.model.BatatoModel;
+import com.binaris.forever_fools.client.model.MegaSpudModel;
 import com.binaris.forever_fools.client.model.ToxifinModel;
-import com.binaris.forever_fools.client.renderer.BatatoRenderer;
-import com.binaris.forever_fools.client.renderer.PlagueWhaleRenderer;
-import com.binaris.forever_fools.client.renderer.PotatoZombieRenderer;
-import com.binaris.forever_fools.client.renderer.ToxifinRenderer;
-import com.binaris.forever_fools.content.entity.ToxifinSlab;
+import com.binaris.forever_fools.client.renderer.*;
 import com.binaris.forever_fools.registry.FFEntityRegistry;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -31,6 +28,8 @@ public class FFCommonClientMod {
     public static void createEntityLayers(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {
         consumer.accept(BatatoModel.LAYER_LOCATION, BatatoModel::createBodyLayer);
         consumer.accept(ToxifinModel.LAYER_LOCATION, ToxifinModel::createBodyLayer);
+        consumer.accept(MegaSpudModel.LAYER_OUTER_LOCATION, MegaSpudModel::createOuterBodyLayer);
+        consumer.accept(MegaSpudModel.LAYER_INNER_LOCATION, MegaSpudModel::createInnerBodyLayer);
     }
 
     public interface EntityRendererCallback { <T extends Entity> void accept(EntityType<? extends T> entityType,
@@ -135,5 +134,6 @@ public class FFCommonClientMod {
         consumer.accept(FFEntityRegistry.POTATO_ZOMBIE, PotatoZombieRenderer::new);
         consumer.accept(FFEntityRegistry.TOXIFIN, ToxifinRenderer::new);
         consumer.accept(FFEntityRegistry.PLAGUEWHALE, PlagueWhaleRenderer::new);
+        consumer.accept(FFEntityRegistry.MEGASPUD, MegaSpudRenderer::new);
     }
 }
