@@ -6,8 +6,9 @@
   "compatibilityLevel": "JAVA_18",
   "mixins": [],
   "client": [
-    "ClientPacketListenerMixin",
-    "MixinMinecraft"
+    "client.ClientPacketListenerMixin",
+    "client.WolfModelMixin",
+    "client.WolfRendererMixin"
   ],
   "server": [],
   "injectors": {

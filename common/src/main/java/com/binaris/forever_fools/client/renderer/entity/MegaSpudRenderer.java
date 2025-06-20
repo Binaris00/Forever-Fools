@@ -1,9 +1,9 @@
-package com.binaris.forever_fools.client.renderer;
+package com.binaris.forever_fools.client.renderer.entity;
 
 import com.binaris.forever_fools.FFCommonMod;
-import com.binaris.forever_fools.client.model.MegaSpudModel;
-import com.binaris.forever_fools.client.renderer.layer.MegaSpudArmorLayer;
-import com.binaris.forever_fools.client.renderer.layer.MegaSpudOuterLayer;
+import com.binaris.forever_fools.client.model.entity.MegaSpudModel;
+import com.binaris.forever_fools.client.renderer.entity.layer.MegaSpudArmorLayer;
+import com.binaris.forever_fools.client.renderer.entity.layer.MegaSpudOuterLayer;
 import com.binaris.forever_fools.content.entity.MegaSpud;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;

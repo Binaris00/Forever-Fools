@@ -1,7 +1,7 @@
-package com.binaris.forever_fools.client.renderer;
+package com.binaris.forever_fools.client.renderer.entity;
 
 import com.binaris.forever_fools.FFCommonMod;
-import com.binaris.forever_fools.client.model.BatatoModel;
+import com.binaris.forever_fools.client.model.entity.BatatoModel;
 import com.binaris.forever_fools.content.entity.Batato;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

@@ -1,6 +1,6 @@
-package com.binaris.forever_fools.client.renderer.layer;
+package com.binaris.forever_fools.client.renderer.entity.layer;
 
-import com.binaris.forever_fools.client.model.MegaSpudModel;
+import com.binaris.forever_fools.client.model.entity.MegaSpudModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;

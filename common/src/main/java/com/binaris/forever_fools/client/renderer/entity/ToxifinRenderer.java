@@ -1,7 +1,7 @@
-package com.binaris.forever_fools.client.renderer;
+package com.binaris.forever_fools.client.renderer.entity;
 
 import com.binaris.forever_fools.FFCommonMod;
-import com.binaris.forever_fools.client.model.ToxifinModel;
+import com.binaris.forever_fools.client.model.entity.ToxifinModel;
 import com.binaris.forever_fools.content.entity.ToxifinSlab;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

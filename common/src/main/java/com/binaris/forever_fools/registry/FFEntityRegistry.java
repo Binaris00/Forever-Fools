@@ -100,6 +100,17 @@ public class FFEntityRegistry {
             .clientTrackingRange(10)
             .build(FFCommonMod.id("megaspud").toString());
 
+    public static final EntityType<MoonCow> MOON_COW = EntityType.Builder.<MoonCow>of(MoonCow::new, MobCategory.CREATURE)
+            .sized(0.9F, 1.4F).eyeHeight(0.925F)
+            .clientTrackingRange(10)
+            .build(FFCommonMod.id("moon_cow").toString());
+
+    // .noSave().noSummon() TODO: ?
+    public static final EntityType<RayTracing> RAY_TRACING = EntityType.Builder.of(RayTracing::new, MobCategory.AMBIENT)
+            .sized(0.6F, 1.8F).eyeHeight(0.925F)
+            .clientTrackingRange(8)
+            .build(FFCommonMod.id("ray_tracing").toString());
+
 
     public static void registerEntityTypes(RegisterFunction<EntityType<?>> function) {
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("chicken_potato"), POTATO_CHICKEN);
@@ -120,6 +131,8 @@ public class FFEntityRegistry {
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("toxifin"), TOXIFIN);
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("plaguewhale"), PLAGUEWHALE);
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("megaspud"), MEGASPUD);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("moon_cow"), MOON_COW);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("ray_tracing"), RAY_TRACING);
     }
 
     public static void registerAttributes(BiConsumer<EntityType<? extends LivingEntity>, AttributeSupplier> consumer) {
@@ -141,5 +154,7 @@ public class FFEntityRegistry {
         consumer.accept(TOXIFIN, ToxifinSlab.createAttributes().build());
         consumer.accept(PLAGUEWHALE, PlaguewhaleSlab.createAttributes().build());
         consumer.accept(MEGASPUD, MegaSpud.createAttributes().build());
+        consumer.accept(MOON_COW, MoonCow.createAttributes().build());
+        consumer.accept(RAY_TRACING, RayTracing.createAttributes().build());
     }
 }

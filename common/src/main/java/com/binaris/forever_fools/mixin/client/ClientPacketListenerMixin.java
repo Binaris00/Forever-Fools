@@ -1,4 +1,4 @@
-package com.binaris.forever_fools.mixin;
+package com.binaris.forever_fools.mixin.client;
 
 import com.binaris.forever_fools.client.resources.SlabAttackSoundInstance;
 import com.binaris.forever_fools.content.entity.ToxifinSlab;

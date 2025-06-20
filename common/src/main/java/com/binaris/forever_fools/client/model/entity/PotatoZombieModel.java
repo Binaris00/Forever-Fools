@@ -1,4 +1,4 @@
-package com.binaris.forever_fools.client.model;
+package com.binaris.forever_fools.client.model.entity;
 
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;

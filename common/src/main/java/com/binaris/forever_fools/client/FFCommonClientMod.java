@@ -1,10 +1,12 @@
 package com.binaris.forever_fools.client;
 
 import com.binaris.forever_fools.FFCommonMod;
-import com.binaris.forever_fools.client.model.BatatoModel;
-import com.binaris.forever_fools.client.model.MegaSpudModel;
-import com.binaris.forever_fools.client.model.ToxifinModel;
-import com.binaris.forever_fools.client.renderer.*;
+import com.binaris.forever_fools.client.model.CrownModel;
+import com.binaris.forever_fools.client.model.entity.BatatoModel;
+import com.binaris.forever_fools.client.model.entity.MegaSpudModel;
+import com.binaris.forever_fools.client.model.entity.MoonCowModel;
+import com.binaris.forever_fools.client.model.entity.ToxifinModel;
+import com.binaris.forever_fools.client.renderer.entity.*;
 import com.binaris.forever_fools.registry.FFEntityRegistry;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -30,6 +32,8 @@ public class FFCommonClientMod {
         consumer.accept(ToxifinModel.LAYER_LOCATION, ToxifinModel::createBodyLayer);
         consumer.accept(MegaSpudModel.LAYER_OUTER_LOCATION, MegaSpudModel::createOuterBodyLayer);
         consumer.accept(MegaSpudModel.LAYER_INNER_LOCATION, MegaSpudModel::createInnerBodyLayer);
+        consumer.accept(MoonCowModel.LAYER_LOCATION, MoonCowModel::createBodyLayer);
+        consumer.accept(CrownModel.LAYER_LOCATION, CrownModel::createLayer);
     }
 
     public interface EntityRendererCallback { <T extends Entity> void accept(EntityType<? extends T> entityType,
@@ -135,5 +139,7 @@ public class FFCommonClientMod {
         consumer.accept(FFEntityRegistry.TOXIFIN, ToxifinRenderer::new);
         consumer.accept(FFEntityRegistry.PLAGUEWHALE, PlagueWhaleRenderer::new);
         consumer.accept(FFEntityRegistry.MEGASPUD, MegaSpudRenderer::new);
+        consumer.accept(FFEntityRegistry.MOON_COW, MoonCowRenderer::new);
+        consumer.accept(FFEntityRegistry.RAY_TRACING, RayTracingRenderer::new);
     }
 }

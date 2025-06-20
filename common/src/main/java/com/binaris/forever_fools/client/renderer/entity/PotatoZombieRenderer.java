@@ -1,7 +1,7 @@
-package com.binaris.forever_fools.client.renderer;
+package com.binaris.forever_fools.client.renderer.entity;
 
 import com.binaris.forever_fools.FFCommonMod;
-import com.binaris.forever_fools.client.model.PotatoZombieModel;
+import com.binaris.forever_fools.client.model.entity.PotatoZombieModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.AbstractZombieRenderer;

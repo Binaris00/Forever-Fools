@@ -1,6 +1,6 @@
-package com.binaris.forever_fools.client.renderer.layer;
+package com.binaris.forever_fools.client.renderer.entity.layer;
 
-import com.binaris.forever_fools.client.model.MegaSpudModel;
+import com.binaris.forever_fools.client.model.entity.MegaSpudModel;
 import com.binaris.forever_fools.content.entity.MegaSpud;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;

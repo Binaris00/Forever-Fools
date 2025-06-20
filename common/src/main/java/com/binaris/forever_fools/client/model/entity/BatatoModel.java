@@ -1,4 +1,4 @@
-package com.binaris.forever_fools.client.model;
+package com.binaris.forever_fools.client.model.entity;
 
 import com.binaris.forever_fools.FFCommonMod;
 import com.binaris.forever_fools.content.entity.Batato;
