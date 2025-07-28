@@ -1,11 +1,13 @@
 package com.binaris.forever_fools.client.renderer.entity.layer;
 
+import com.binaris.forever_fools.content.entity.SpyglassSkeleton;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HeadedModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,11 +22,11 @@ public class DoubleSpyGlassLayer<T extends LivingEntity, M extends EntityModel<T
     }
 
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int i, T livingEntity, float f, float g, float h, float j, float k, float l) {
-        if (livingEntity instanceof Skeleton skeleton) {
-//            int m = skeleton.getSpyglassesInSockets();
-//            if (m == 0) {
-//                return;
-//            }
+        if (livingEntity instanceof SpyglassSkeleton skeleton) {
+            int m = skeleton.getSpyglassesInSockets();
+            if (m == 0) {
+                return;
+            }
 
             ItemStack itemStack = new ItemStack(Items.SPYGLASS);
             double d = 0.15625;
@@ -34,25 +36,45 @@ public class DoubleSpyGlassLayer<T extends LivingEntity, M extends EntityModel<T
             poseStack.pushPose();
             this.getParentModel().getHead().translateAndRotate(poseStack);
             poseStack.scale(0.75F, 0.75F, 0.75F);
-//            if (m >= 1) {
-//                poseStack.pushPose();
-//                poseStack.translate(-0.15625, -0.28125, 0.5);
-//                Minecraft.getInstance()
-//                        .getItemRenderer()
-//                        .renderStatic(livingEntity, itemStack, ItemDisplayContext.HEAD, false, poseStack,
-//                                multiBufferSource, livingEntity.level(), i, 1, 1);
-//                poseStack.popPose();
-//            }
-//
-//            if (m >= 2) {
-//                poseStack.pushPose();
-//                poseStack.translate(0.15625, -0.28125, 0.5);
-//                Minecraft.getInstance()
-//                        .getItemRenderer()
-//                        .renderStatic(livingEntity, itemStack, ItemDisplayContext.HEAD, false, poseStack,
-//                                multiBufferSource, livingEntity.level(), i, 1, 1);
-//                poseStack.popPose();
-//            }
+            if (m >= 1) {
+                poseStack.pushPose();
+                poseStack.translate(-0.15625, -0.28125, 0.5);
+                Minecraft.getInstance()
+                        .getItemRenderer()
+                        .renderStatic(
+                                livingEntity,
+                                itemStack,
+                                ItemDisplayContext.HEAD,
+                                false,
+                                poseStack,
+                                multiBufferSource,
+                                livingEntity.level(),
+                                i,
+                                LivingEntityRenderer.getOverlayCoords(livingEntity, 0.0F),
+                                livingEntity.getId()
+                        );
+                poseStack.popPose();
+            }
+
+            if (m >= 2) {
+                poseStack.pushPose();
+                poseStack.translate(0.15625, -0.28125, 0.5);
+                Minecraft.getInstance()
+                        .getItemRenderer()
+                        .renderStatic(
+                                livingEntity,
+                                itemStack,
+                                ItemDisplayContext.HEAD,
+                                false,
+                                poseStack,
+                                multiBufferSource,
+                                livingEntity.level(),
+                                i,
+                                LivingEntityRenderer.getOverlayCoords(livingEntity, 0.0F),
+                                livingEntity.getId()
+                        );
+                poseStack.popPose();
+            }
 
             poseStack.popPose();
         }

@@ -9,6 +9,8 @@ import com.google.common.collect.ImmutableBiMap;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
 
 import java.util.Map;
 
@@ -24,6 +26,9 @@ public final class FFItemRegistry {
     public static final Item HOT_POTATO = new HotPotatoItem(new Item.Properties().stacksTo(1).fireResistant().food(FFFoodProperties.HOT_POTATO));
     public static final Item HASH_BROWNS = new Item(new Item.Properties().food(FFFoodProperties.HASH_BROWNS));
 
+    public static final Item CUPID_SWORD = new SwordItem(Tiers.STONE, new Item.Properties()
+            .attributes(SwordItem.createAttributes(Tiers.STONE, 3, -2.4F)));
+
     public static ImmutableBiMap<DyeColor, Item> POTATOPEELS_ITEMS;
     public static Map<DyeColor, Item> POTATOPEELS_BLOCKS;
 
@@ -37,6 +42,7 @@ public final class FFItemRegistry {
         function.register(BuiltInRegistries.ITEM, FFCommonMod.id("poisonous_potato_chips"), POISONOUS_POTATO_CHIPS);
         function.register(BuiltInRegistries.ITEM, FFCommonMod.id("hot_potato"), HOT_POTATO);
         function.register(BuiltInRegistries.ITEM, FFCommonMod.id("hash_browns"), HASH_BROWNS);
+        function.register(BuiltInRegistries.ITEM, FFCommonMod.id("cupid_sword"), CUPID_SWORD);
 
         ImmutableBiMap.Builder builder = ImmutableBiMap.builder();
         for (DyeColor dyeColor : DyeColor.values()) {

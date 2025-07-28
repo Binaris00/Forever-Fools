@@ -9,11 +9,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ambient.Bat;
-import net.minecraft.world.entity.animal.Bee;
-import net.minecraft.world.entity.animal.Chicken;
-import net.minecraft.world.entity.animal.Cow;
-import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.animal.armadillo.Armadillo;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.level.block.Blocks;
@@ -57,6 +55,14 @@ public class FFEntityRegistry {
     public static final EntityType<Skeleton> SKELETON_POTATO = EntityType.Builder.of(Skeleton::new, MobCategory.MONSTER)
             .sized(0.6F, 1.99F).eyeHeight(1.74F).ridingOffset(-0.7F).clientTrackingRange(8)
             .build(FFCommonMod.id("skeleton_potato").toString());
+
+    public static final EntityType<Bogged> BOGGED_POTATO = EntityType.Builder.of(Bogged::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.99F).eyeHeight(1.74F).ridingOffset(-0.7F).clientTrackingRange(8)
+            .build(FFCommonMod.id("bogged_potato").toString());
+
+    public static final EntityType<SpyglassSkeleton> SPYGLASS_SKELETON = EntityType.Builder.of(SpyglassSkeleton::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.99F).eyeHeight(1.74F).ridingOffset(-0.7F).clientTrackingRange(8)
+            .build(FFCommonMod.id("spyglass_skeleton").toString());
 
     public static final EntityType<Spider> SPIDER_POTATO = EntityType.Builder.of(Spider::new, MobCategory.MONSTER)
             .sized(1.4F, 0.9F).eyeHeight(0.65F).passengerAttachments(0.765F).clientTrackingRange(8)
@@ -105,11 +111,97 @@ public class FFEntityRegistry {
             .clientTrackingRange(10)
             .build(FFCommonMod.id("moon_cow").toString());
 
+    public static final EntityType<WitherBoss> PINK_WITHER = EntityType.Builder.<WitherBoss>of(WitherBoss::new, MobCategory.MONSTER)
+            .sized(0.9F, 3.5F)
+            .clientTrackingRange(10)
+            .fireImmune().immuneTo(Blocks.WITHER_ROSE)
+            .build(FFCommonMod.id("pink_wither").toString());
+
+    public static final EntityType<Chicken> DIAMOND_CHICKEN = EntityType.Builder.of(Chicken::new, MobCategory.CREATURE)
+            .sized(0.4F, 0.7F).eyeHeight(0.644F).clientTrackingRange(10).passengerAttachments(new Vec3(0.0, 0.7, -0.1))
+            .build(FFCommonMod.id("diamond_chicken").toString());
+
+    public static final EntityType<Pig> PONY_PIG = EntityType.Builder.of(Pig::new, MobCategory.CREATURE)
+            .sized(0.9F, 0.9F).passengerAttachments(0.86875F).clientTrackingRange(10)
+            .build(FFCommonMod.id("pony_pig").toString());
+
+    public static final EntityType<Cow> HORSE_COW = EntityType.Builder.of(Cow::new, MobCategory.CREATURE)
+            .sized(0.9F, 1.4F).eyeHeight(1.3F).passengerAttachments(1.36875F).clientTrackingRange(10)
+            .build(FFCommonMod.id("horse_cow").toString());
+
+    public static final EntityType<FatCowEntity> FAT_COW = EntityType.Builder.of(FatCowEntity::new, MobCategory.CREATURE)
+            .sized(0.9F, 1.4F).eyeHeight(1.3F).passengerAttachments(1.36875F).clientTrackingRange(10)
+            .build(FFCommonMod.id("fat_cow").toString());
+
+    public static final EntityType<Silverfish> REDSTONE_BUG = EntityType.Builder.of(Silverfish::new, MobCategory.MONSTER)
+            .sized(0.4F, 0.3F).eyeHeight(0.13F).passengerAttachments(0.2375F)
+            .clientTrackingRange(10)
+            .build(FFCommonMod.id("redstone_bug").toString());
+
+    public static final EntityType<FatPigEntity> FAT_PIG = EntityType.Builder.of(FatPigEntity::new, MobCategory.CREATURE)
+            .sized(0.9F, 0.9F).passengerAttachments(0.86875F).clientTrackingRange(10)
+            .build(FFCommonMod.id("fat_pig").toString());
+
+    public static final EntityType<FatSheepEntity> FAT_SHEEP = EntityType.Builder.of(FatSheepEntity::new, MobCategory.CREATURE)
+            .sized(0.9F, 1.3F).eyeHeight(1.235F).passengerAttachments(1.2375F)
+            .clientTrackingRange(10)
+            .build(FFCommonMod.id("fat_sheep").toString());
+
+    public static final EntityType<LoveGolem> LOVE_GOLEM = EntityType.Builder.of(LoveGolem::new, MobCategory.CREATURE)
+            .sized(0.9F, 1.3F)
+            .clientTrackingRange(10)
+            .build(FFCommonMod.id("love_golem").toString());
+
     // .noSave().noSummon() TODO: ?
     public static final EntityType<RayTracing> RAY_TRACING = EntityType.Builder.of(RayTracing::new, MobCategory.AMBIENT)
             .sized(0.6F, 1.8F).eyeHeight(0.925F)
             .clientTrackingRange(8)
             .build(FFCommonMod.id("ray_tracing").toString());
+
+    public static final EntityType<SmileCreeper> SMILE_CREEPER = EntityType.Builder.of(SmileCreeper::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.7F).eyeHeight(1.3F).clientTrackingRange(8)
+            .build(FFCommonMod.id("smile_creeper").toString());
+
+    public static final EntityType<Sheep> SHEARED_SHEEP = EntityType.Builder.of(Sheep::new, MobCategory.CREATURE)
+            .sized(0.9F, 1.3F).eyeHeight(1.235F).passengerAttachments(1.2375F)
+            .clientTrackingRange(10)
+            .build(FFCommonMod.id("sheared_sheep").toString());
+
+    public static final EntityType<Sheep> SHEEP_POTATO = EntityType.Builder.of(Sheep::new, MobCategory.CREATURE)
+            .sized(0.9F, 1.3F).eyeHeight(1.235F).passengerAttachments(1.2375F)
+            .clientTrackingRange(10)
+            .build(FFCommonMod.id("sheep_potato").toString());
+
+    public static final EntityType<Wolf> WOLF_MARS = EntityType.Builder.of(Wolf::new, MobCategory.CREATURE)
+            .sized(0.6F, 0.85F).eyeHeight(0.68F)
+            .passengerAttachments(new Vec3(0.0, 0.81875, -0.0625))
+            .clientTrackingRange(10)
+            .build(FFCommonMod.id("wolf_mars").toString());
+
+    public static final EntityType<SpidermanPig> SPIDERMAN_PIG = EntityType.Builder.of(SpidermanPig::new, MobCategory.CREATURE)
+            .sized(0.9F, 0.9F).passengerAttachments(0.86875F).clientTrackingRange(10)
+            .build(FFCommonMod.id("spiderman_pig").toString());
+
+    public static final EntityType<VisionBaseEntity> VISION_CREEPER = EntityType.Builder.of(VisionBaseEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.7F).eyeHeight(1.3F).clientTrackingRange(8)
+            .build(FFCommonMod.id("vision_creeper").toString());
+
+    public static final EntityType<VisionBaseEntity> VISION_ZOMBIE = EntityType.Builder.of(VisionBaseEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F).eyeHeight(1.74F).passengerAttachments(2.0125F)
+            .clientTrackingRange(8).ridingOffset(-0.7F)
+            .build(FFCommonMod.id("vision_zombie").toString());
+
+    public static final EntityType<VisionBaseEntity> NERD_CREEPER = EntityType.Builder.of(VisionBaseEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.7F).eyeHeight(1.3F).clientTrackingRange(8)
+            .build(FFCommonMod.id("nerd_creeper").toString());
+
+    public static final EntityType<VisionBaseEntity> VISION_ENDERMAN = EntityType.Builder.of(VisionBaseEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 2.9F).eyeHeight(2.55F).passengerAttachments(2.80625F).clientTrackingRange(8)
+            .build(FFCommonMod.id("vision_enderman").toString());
+
+    public static final EntityType<VisionBaseEntity> VISION_SKELETON = EntityType.Builder.of(VisionBaseEntity::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.99F).eyeHeight(1.74F).ridingOffset(-0.7F).clientTrackingRange(8)
+            .build(FFCommonMod.id("vision_skeleton").toString());
 
 
     public static void registerEntityTypes(RegisterFunction<EntityType<?>> function) {
@@ -133,6 +225,28 @@ public class FFEntityRegistry {
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("megaspud"), MEGASPUD);
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("moon_cow"), MOON_COW);
         function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("ray_tracing"), RAY_TRACING);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("pink_wither"), PINK_WITHER);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("diamond_chicken"), DIAMOND_CHICKEN);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("pony_pig"), PONY_PIG);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("horse_cow"), HORSE_COW);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("redstone_bug"), REDSTONE_BUG);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("fat_cow"), FAT_COW);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("fat_sheep"), FAT_SHEEP);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("fat_pig"), FAT_PIG);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("love_golem"), LOVE_GOLEM);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("smile_creeper"), SMILE_CREEPER);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("sheared_sheep"), SHEARED_SHEEP);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("wolf_mars"), WOLF_MARS);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("spiderman_pig"), SPIDERMAN_PIG);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("spyglass_skeleton"), SPYGLASS_SKELETON);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("vision_creeper"), VISION_CREEPER);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("vision_zombie"), VISION_ZOMBIE);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("nerd_creeper"), NERD_CREEPER);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("vision_enderman"), VISION_ENDERMAN);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("vision_skeleton"), VISION_SKELETON);
+
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("bogged_potato"), BOGGED_POTATO);
+        function.register(BuiltInRegistries.ENTITY_TYPE, FFCommonMod.id("sheep_potato"), SHEEP_POTATO);
     }
 
     public static void registerAttributes(BiConsumer<EntityType<? extends LivingEntity>, AttributeSupplier> consumer) {
@@ -155,6 +269,27 @@ public class FFEntityRegistry {
         consumer.accept(PLAGUEWHALE, PlaguewhaleSlab.createAttributes().build());
         consumer.accept(MEGASPUD, MegaSpud.createAttributes().build());
         consumer.accept(MOON_COW, MoonCow.createAttributes().build());
+        consumer.accept(PINK_WITHER, WitherBoss.createAttributes().build());
         consumer.accept(RAY_TRACING, RayTracing.createAttributes().build());
+        consumer.accept(DIAMOND_CHICKEN, Chicken.createAttributes().build());
+        consumer.accept(PONY_PIG, Pig.createAttributes().build());
+        consumer.accept(HORSE_COW, Cow.createAttributes().build());
+        consumer.accept(REDSTONE_BUG, Silverfish.createAttributes().build());
+        consumer.accept(FAT_COW, FatCowEntity.createAttributes().build());
+        consumer.accept(FAT_SHEEP, FatSheepEntity.createAttributes().build());
+        consumer.accept(FAT_PIG, FatPigEntity.createAttributes().build());
+        consumer.accept(LOVE_GOLEM, LoveGolem.createAttributes().build());
+        consumer.accept(SMILE_CREEPER, Creeper.createAttributes().build());
+        consumer.accept(SHEARED_SHEEP, Sheep.createAttributes().build());
+        consumer.accept(WOLF_MARS, Wolf.createAttributes().build());
+        consumer.accept(SPIDERMAN_PIG, Pig.createAttributes().build());
+        consumer.accept(SPYGLASS_SKELETON, Skeleton.createAttributes().build());
+        consumer.accept(VISION_CREEPER, Sheep.createAttributes().build());
+        consumer.accept(VISION_ZOMBIE, Sheep.createAttributes().build());
+        consumer.accept(NERD_CREEPER, Sheep.createAttributes().build());
+        consumer.accept(VISION_ENDERMAN, Sheep.createAttributes().build());
+        consumer.accept(VISION_SKELETON, Sheep.createAttributes().build());
+        consumer.accept(BOGGED_POTATO, Bogged.createAttributes().build());
+        consumer.accept(SHEEP_POTATO, Sheep.createAttributes().build());
     }
 }

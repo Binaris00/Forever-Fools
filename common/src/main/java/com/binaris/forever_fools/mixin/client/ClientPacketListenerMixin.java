@@ -24,8 +24,8 @@ public abstract class ClientPacketListenerMixin extends ClientCommonPacketListen
     @Inject(method = "handleEntityEvent", at = @At("TAIL"))
     public void handleEntityEvent(ClientboundEntityEventPacket pPacket, CallbackInfo ci, @Local Entity entity) {
         if (entity != null) {
-            if(pPacket.getEventId() == 19){
-                minecraft.getSoundManager().play(new SlabAttackSoundInstance((ToxifinSlab) entity));
+            if(pPacket.getEventId() == 19 && entity instanceof ToxifinSlab toxifinSlab){
+                minecraft.getSoundManager().play(new SlabAttackSoundInstance(toxifinSlab));
             }
         }
 

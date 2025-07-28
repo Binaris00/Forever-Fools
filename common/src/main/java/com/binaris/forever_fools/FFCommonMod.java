@@ -11,7 +11,6 @@ public class FFCommonMod {
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
 
     public static void init() {
-
     }
 
     public static ResourceLocation id(String name){
