@@ -1,5 +1,6 @@
 package com.binaris.forever_fools.client.renderer.entity.layer;
 
+import com.binaris.forever_fools.FFCommonMod;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
@@ -18,7 +19,7 @@ import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.item.DyeColor;
 
 public class SheepPotatoFurLayer extends RenderLayer<Sheep, SheepModel<Sheep>> {
-    private static final ResourceLocation SHEEP_FUR_LOCATION = ResourceLocation.withDefaultNamespace("textures/entity/sheep/sheep_fur.png");
+    private static final ResourceLocation SHEEP_FUR_LOCATION = FFCommonMod.id("textures/entity/sheep/sheep_fur.png");
     private final SheepFurModel<Sheep> model;
 
     public SheepPotatoFurLayer(RenderLayerParent<Sheep, SheepModel<Sheep>> pRenderer, EntityModelSet pModelSet) {
